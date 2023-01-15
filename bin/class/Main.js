@@ -14,8 +14,8 @@ class Main {
 	findOrCreateFolder(p) {
 		let pathing = this.parsePath(p);
 		pathing.forEach((dir) => {
-			let exists = fs.existsSync(path.join(__dirname, dir));
-			if (!exists) fs.mkdirSync(path.join(__dirname, dir));
+			let exists = fs.existsSync(path.join(process.cwd(), dir));
+			if (!exists) fs.mkdirSync(path.join(process.cwd(), dir));
 		});
 	}
 }
