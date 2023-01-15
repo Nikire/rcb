@@ -1,0 +1,23 @@
+{
+	"name": "rcb",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./bin/index.js",
+	"bin": {
+		"rcb": "./bin/index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Nikire/rcb.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Nikire/rcb/issues"
+	},
+	"homepage": "https://github.com/Nikire/rcb#readme",
+	"dependencies": {
+		"commander": "^10.0.0"
+	}
+}
