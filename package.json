@@ -19,5 +19,8 @@
 	"homepage": "https://github.com/Nikire/rcb#readme",
 	"dependencies": {
 		"commander": "^10.0.0"
+	},
+	"devDependencies": {
+		"prettier": "^2.8.3"
 	}
 }
