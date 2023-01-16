@@ -1,11 +1,9 @@
-const fs = require('fs');
-const path = require('path');
 const Main = require('./Main.js')
 
 class Setup extends Main {
     constructor(type) {
         super()
-        this.type = type;
+        this.type = type.toLoweCase();
     }
     createSet() {
         let pathSetup = `/src/${this.type}/`

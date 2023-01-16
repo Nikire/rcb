@@ -7,4 +7,4 @@ export default function <NAME>() {
       {/* Write your code here */}
     </div>
   )
-}`;
+}`

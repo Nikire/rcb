@@ -1,5 +1,4 @@
-module.exports = `
-const initialState = {
+module.exports = `const initialState = {
 
 }
 
@@ -9,5 +8,4 @@ const rootReducer = (state = initialState, action) => {
     }
 }
 
-export default rootReducer;
-`;
+export default rootReducer;`
