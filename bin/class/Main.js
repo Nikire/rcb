@@ -70,6 +70,7 @@ class Main {
     fs.writeFileSync(path.join(process.cwd(), dir), content);
     console.log('Done creating ' + dir);
   }
+
   useTemplate(p, name = 'component') {
     let template = require(path.join(this.templatesPath, p));
     template = template.replaceAll('<NAME>', name);
@@ -81,14 +82,14 @@ class Main {
     switch (type) {
       case 'redux':
         const reduxArray = [
-          { name: 'actions', direccion: path + 'actions/' + 'actions' + '.js' },
-          { name: 'reducer', direccion: path + 'reducer/' + 'reducer' + '.js' },
-          { name: 'store', direccion: path + 'store/' + 'store' + '.js' }
+          { name: 'actions', direccion: `${path}actions/actions.js` },
+          { name: 'reducer', direccion: `${path}reducer/reducer.js` },
+          { name: 'store', direccion: `${path}store/store.js` }
         ]
         this.findOrCreateFolder(path)
         reduxArray.forEach((carpeta) => {
           this.findOrCreateFolder(`${path}/${carpeta.name}`)
-          this.createFile(carpeta.direccion, this.useTemplate(`/components/${carpeta.name}.js`))
+          this.createFile(carpeta.direccion, this.useTemplate(`/redux/${carpeta.name}.js`))
         })
       default: console.log("Ingrese algun valor recomendado en la documentación")
     }
