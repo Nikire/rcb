@@ -76,6 +76,23 @@ class Main {
 
     return template;
   }
+
+  setupCreate(type, path) {
+    switch (type) {
+      case 'redux':
+        const reduxArray = [
+          { name: 'actions', direccion: path + 'actions/' + 'actions' + '.js' },
+          { name: 'reducer', direccion: path + 'reducer/' + 'reducer' + '.js' },
+          { name: 'store', direccion: path + 'store/' + 'store' + '.js' }
+        ]
+        this.findOrCreateFolder(path)
+        reduxArray.forEach((carpeta) => {
+          this.findOrCreateFolder(`${path}/${carpeta.name}`)
+          this.createFile(carpeta.direccion, this.useTemplate(`/components/${carpeta.name}.js`))
+        })
+      default: console.log("Ingrese algun valor recomendado en la documentación")
+    }
+  }
 }
 
 module.exports = Main;
