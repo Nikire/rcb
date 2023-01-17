@@ -1,8 +1,8 @@
-const Environment = require('../../class/Enviroment');
+const Environment = require('../../class/Environment');
 
 function createEnvironment(type) {
     const environmentHandler = new Environment(type);
-    environmentHandler.createComponent();
+    environmentHandler.createEnvironment();
 }
 
 module.exports = createEnvironment;

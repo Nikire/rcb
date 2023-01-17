@@ -94,6 +94,15 @@ class Main {
       default: console.log("Ingrese algun valor recomendado en la documentación")
     }
   }
+
+  createEnvironment() {
+    this.findOrCreateFolder('/src')
+    const reactArray = [
+      { name: 'app', direccion: `/src/app.js` },
+      { name: 'index', direccion: `/src/index.js` }
+    ]
+    reactArray.forEach((react) => this.createFile(react.direccion, this.useTemplate(`/react/${react.name}.js`)))
+  }
 }
 
 module.exports = Main;
