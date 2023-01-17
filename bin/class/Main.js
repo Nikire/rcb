@@ -72,7 +72,7 @@ class Main {
   }
 
   useTemplate(p, name = 'component') {
-    let template = require(path.join(this.templatesPath, p));
+    let template = String(require(path.join(this.templatesPath, p)));
     template = template.replaceAll('<NAME>', name);
 
     return template;
@@ -97,11 +97,14 @@ class Main {
 
   createEnvironment() {
     this.findOrCreateFolder('/src')
+    this.findOrCreateFolder('/public')
     const reactArray = [
       { name: 'app', direccion: `/src/app.js` },
-      { name: 'index', direccion: `/src/index.js` }
+      { name: 'index', direccion: `/src/index.js` },
     ]
+    this.createFile('/public/index.html', this.useTemplate('/react/html.js'))
     reactArray.forEach((react) => this.createFile(react.direccion, this.useTemplate(`/react/${react.name}.js`)))
+    this.createFile('/package.json', this.useTemplate('/react/package.js'))
   }
 }
 
