@@ -3,7 +3,7 @@ const Main = require('./Main.js')
 class Setup extends Main {
     constructor(type) {
         super()
-        this.type = type.toLoweCase();
+        this.type = type.toLowerCase();
     }
     createSet() {
         let pathSetup = `/src/${this.type}/`

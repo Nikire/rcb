@@ -5,7 +5,8 @@ const { program } = require('commander');
 // Import commands
 
 const createReactComponent = require('./commands/create-react-component');
-const createSetup = require('./commands/create-setup')
+const createSetup = require('./commands/create-setup');
+const createEnvironment = require('./commands/create-environment');
 
 // Comandos
 program
@@ -19,6 +20,11 @@ program
 	.command('create-setup <type')
 	.description('create-setup [type] used to create a specific setup')
 	.action(createSetup)
+
+program
+	.command('create-environment <type>')
+	.description('create-environment [type] used to create a specific environment')
+	.action(createEnvironment)
 
 // También importante para que todo funcione
 program.parse();

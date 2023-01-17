@@ -10,7 +10,7 @@ class Component extends Main {
     let jsx = path + '/' + this.name + '.jsx';
     let css = path + '/' + this.name + '.modules.css';
     this.findOrCreateFolder(path);
-    this.createFile(jsx, this.useTemplate('/components/rfc.js', this.name));
+    this.createFile(jsx, this.useTemplate(`/components/${this.name}.js`, this.name));
     this.createFile(css);
   }
 }
