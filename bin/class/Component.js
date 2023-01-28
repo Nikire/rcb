@@ -1,4 +1,6 @@
 const Main = require('./Main.js');
+const Template = require('./Template.js');
+
 class Component extends Main {
   constructor(name) {
     super();
@@ -10,7 +12,11 @@ class Component extends Main {
     let jsx = path + '/' + this.name + '.jsx';
     let css = path + '/' + this.name + '.modules.css';
     this.findOrCreateFolder(path);
-    this.createFile(jsx, this.useTemplate(`/components/${this.name}.js`, this.name));
+    let rfcTemplate = new Template();
+    rfcTemplate.useTemplate('/components/rfc.js');
+    rfcTemplate.setVariable({ name: this.name });
+    console.log(rfcTemplate.actualTemplate);
+    this.createFile(jsx, rfcTemplate.render());
     this.createFile(css);
   }
 }
