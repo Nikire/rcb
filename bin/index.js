@@ -16,7 +16,7 @@ program
   .action(createReactComponent);
 
 program
-  .command('create-setup <type')
+  .command('create-setup <type>')
   .description('create-setup [type] used to create a specific setup')
   .action(createSetup);
 
