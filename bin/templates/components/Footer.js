@@ -1,7 +1,7 @@
 module.exports = `import React from 'react';
-import './<NAME>.modules.css';
+import './{{NAME}}.modules.css';
 
-const <NAME> = ({ type = 1 }) => {
+const {{NAME}} = ({ type = 1 }) => {
     const footer = () => {
         switch (type) {
             case 1: return <Footer1 />
@@ -21,4 +21,4 @@ const Footer1 = () => {
     )
 }
 
-export default <NAME>;`
+export default {{NAME}};`;
